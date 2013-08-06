@@ -1,7 +1,7 @@
 #!/usr/bin/python2.7
 
 '''
-This module provides a unbounded stream generator for the digits a pi.
+This module provides a unbounded stream generator for the digits of pi.
 It utilizes the algorithm by Jeremy Gibbons outlined here:
 
 http://www.cs.ox.ac.uk/people/jeremy.gibbons/publications/spigot.pdf
