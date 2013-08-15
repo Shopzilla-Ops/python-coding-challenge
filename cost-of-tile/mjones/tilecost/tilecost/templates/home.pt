@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html metal:define-macro="layout">
+<head>
+ <title>Tile Cost Calculator</title>
+ <link rel="shortcut icon" href="${request.static_url('tilecost:static/favicon.ico')}" />
+ <link rel="stylesheet" href="${request.static_url('tilecost:static/bootstrap/css/bootstrap.min.css')}" />
+ <link rel="stylesheet" href="${request.static_url('tilecost:static/bootstrap/css/bootstrap-responsive.min.css')}" />
+</head>
+<body>
+<!-- Navbar and search input -->
+  <div class="navbar navbar-inner">
+    <div class="container">
+      <a class="brand" href="${request.route_url('home')}"><strong>Tile Cost Calculator</strong></a>
+      <ul class="nav pull-left">
+        <li>
+          <form class="navbar-form pull-left" method="post">
+            <input name="feetWidth" type="text" class="search-query" placeholder="Width (ft)" required>
+            <input name="feetLength" type="text" class="search-query" placeholder="Length (ft)" required>
+            <input name="tileCost" type="text" class="search-query" placeholder="Tile Cost ($/sq.ft)" required>
+            <button type="submit" class="btn">Calculate!</button>
+          </form>
+        </li>
+      </ul>
+      <ul class="nav pull-right">
+        <li><a href="#helpModal" role="button" data-toggle="modal">Help</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- Main body -->
+  <div class="container">
+    <div class="hero-unit">
+      <h1>Welcome to the tile price-figure-outer-machine!</h1>
+      <p>To begin, please input the length, width, and price per square foot in the boxes above. Enjoy!</p>
+      <p>For help, <a href="#helpModal" role="button" class="btn btn-primary btn-small" data-toggle="modal">click here</a> <em>but definitely </em><a href="http://www.dont-click-me.com/" role="button" class="btn btn-danger btn-small">not here</a></p>
+    </div>
+    <div tal:condition="totalCost">
+      <p><h1>Results!</h1><h3><b>The total cost is: </b>$${totalCost}</h3></p>
+    </div>
+  </div>
+<!-- Help Popup Modal -->
+  <div id="helpModal" class="modal hide fade" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">x</button>
+      <h3>Tile Cost Calculator</h3>
+    </div>
+    <div class="modal-body">
+      <h4>What the heck is this?!</h4>
+      <p>Don't have a calculator or understand those number thingamajigs? No problemo. This tool can be used to calculate the total cost of tile, provided a given length, width, and price per square foot.</p>
+      <h4>How do I use this thing?!</h4>
+      <p>For width and length, enter the appropriate values of your floor (in feet). For price, input the cost of your tile in dollar/sq.ft.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn" data-dismiss="modal">Close</a>
+    </div>
+  </div>
+<!-- jQuery and Bootstrap JS -->
+  <script src="${request.static_url('tilecost:static/jquery-1.10.2.min.js')}"></script>
+  <script src="${request.static_url('tilecost:static/bootstrap/js/bootstrap.min.js')}"></script>
+</body>
+</html>
