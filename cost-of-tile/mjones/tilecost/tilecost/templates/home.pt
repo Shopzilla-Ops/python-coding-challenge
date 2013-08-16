@@ -2,7 +2,6 @@
 <html metal:define-macro="layout">
 <head>
  <title>Tile Cost Calculator</title>
- <link rel="shortcut icon" href="${request.static_url('tilecost:static/favicon.ico')}" />
  <link rel="stylesheet" href="${request.static_url('tilecost:static/bootstrap/css/bootstrap.min.css')}" />
  <link rel="stylesheet" href="${request.static_url('tilecost:static/bootstrap/css/bootstrap-responsive.min.css')}" />
 </head>
