@@ -8,9 +8,9 @@ def home(request):
     """
     if request.POST:
         post = request.POST.mixed()
-        length = int(post['feetLength'])
-        width = int(post['feetWidth'])
-        cost = int(post['tileCost'])
+        length = float(post['feetLength'])
+        width = float(post['feetWidth'])
+        cost = float(post['tileCost'])
         area = length * width
         totalcost = cost * area
         return { 'totalCost' : totalcost }
