@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" id="ng-app" ng-app ng-controller="mainController">
+    <head>
+        <meta charset="utf-8">
+        <title>Tile Calc</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap.min.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <style>
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none;
+            }
+        </style>
+    </head>
+    <br>
+    <body ng-cloak>
+        <div class="container">
+            <header class="jumbotron subhead">
+                <h1>Tile Calc<i class="icon-book"></i></h1>
+                <p class="muted">for builders without pocket calculators or an elementary school education</p>
+            </header>
+
+            <div class="row">
+                <div class="col-md-6">
+
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="width" class="col-md-4 control-label">Width (any unit)</label>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control input-lg" id="width" ng-model="width">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="height" class="col-md-4 control-label">Height (any unit)</label>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control input-lg" id="height" ng-model="height">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="price" class="col-md-4 control-label">Price per square unit (USD$)</label>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control input-lg" id="price" ng-model="price">
+                            </div>
+                        </div>
+                    </form>
+
+                </div> <!--span-->
+                <div class="col-md-5 col-md-offset-1">
+                    <p class="lead well">Total Cost: <strong>{{totalCost() | currency}}</strong></p>
+                </div> <!--span-->
+
+            </div> <!--row-->
+
+        </div><!--container-->
+        <hr>
+        <div id="footer" class="container-fluid">
+            <center><small>Tile Calc</small></center>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+        <script src='./js/main.js'></script>
+    </body>
+</html>
