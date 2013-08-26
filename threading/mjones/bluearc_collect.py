@@ -36,7 +36,7 @@ class BlueArcServer(object):
     def get_mounts(self, site):
         '''Collect Site-specific BlueArc mounts'''
         self.site = site
-        if self.site  == 'sea':
+        if self.site == 'sea':
             barcname = 'barcnfs'
         elif self.site == 'laxhq':
             barcname = 'tbarc'
@@ -72,6 +72,7 @@ def generate_queue():
         hostname = row[0]
         dbqueue.put(hostname)
     return dbqueue
+
 
 def worker(i, queue, site):
     '''Thread working function, uses BlueArcServer() to perform lookups
@@ -128,9 +129,9 @@ if __name__ == "__main__":
     totalcount = queue.qsize()
     # Create our threads
     for i in range(threads):
-       thread = Thread(target=worker, args=(i, queue, site)) 
-       thread.setDaemon(True)
-       thread.start()
+        thread = Thread(target=worker, args=(i, queue, site))
+        thread.setDaemon(True)
+        thread.start()
     # Wait for completion
     queue.join()
     # Output to our CSV
