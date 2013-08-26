@@ -74,7 +74,7 @@ def generate_queue():
     return dbqueue
 
 def worker(i, queue, site):
-    ''''Thread working function, uses BlueArcServer() to perform lookups
+    '''Thread working function, uses BlueArcServer() to perform lookups
     on hosts pulled from a populated Queue()
     '''
     while True:
