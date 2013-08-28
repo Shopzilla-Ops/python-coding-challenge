@@ -4,43 +4,43 @@
 import sys
 
 
-def add(int1, int2):
-    '''Add two integers'''
-    res = int1 + int2
+def add(num1, num2):
+    '''Add two numbers'''
+    res = num1 + num2
     return res
 
 
-def sub(int1, int2):
-    '''Subtract one integer from another'''
-    res = int1 - int2
+def sub(num1, num2):
+    '''Subtract one number from another'''
+    res = num1 - num2
     return res
 
 
-def mult(int1, int2):
-    '''Multiply two integers'''
-    res = int1 * int2
+def mult(num1, num2):
+    '''Multiply two numbers'''
+    res = num1 * num2
     return res
 
 
-def div(int1, int2):
-    '''Divide one integer by another'''
-    res = int1 / int2
+def div(num1, num2):
+    '''Divide one number by another'''
+    res = num1 / num2
     return res
 
 
 def calculate(calc_buffer):
     '''Do the math'''
-    int1 = int(calc_buffer[0])
-    int2 = int(calc_buffer[2])
+    num1 = float(calc_buffer[0])
+    num2 = float(calc_buffer[2])
     oper = calc_buffer[1]
     if oper == '+':
-        res = add(int1, int2)
+        res = add(num1, num2)
     elif oper == '-':
-        res = sub(int1, int2)
+        res = sub(num1, num2)
     elif oper == '*':
-        res = mult(int1, int2)
+        res = mult(num1, num2)
     elif oper == '/':
-        res = div(int1, int2)
+        res = div(num1, num2)
     else:
         print "Invalid operator: %s" % oper
         sys.exit(2)
