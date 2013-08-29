@@ -89,7 +89,7 @@ def calculate(expression):
     return _reduce_expression(tokens)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     parser = argparse.ArgumentParser(
         description='Evaluate mathematical expression')
     parser.add_argument('expression', help='Expression to evaluate')
