@@ -24,7 +24,7 @@ def worker():
             out_q.put([item,loadtime])
         q.task_done()
 
-num_worker_threads = 10
+num_worker_threads = 9
 status_dict = {}
 
 #Open URL File and build urllist while stripping out trailing \n's
