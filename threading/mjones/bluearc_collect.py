@@ -2,7 +2,7 @@
 '''A script for gathering BlueArc NFS shares mounted on servers. It takes one
 mandatory parameter, the BlueArc site location (either LAXHQ or SEA), and one
 optional paramater, how many threads to use. Results are returned in
-CSV format.
+txt format.
 '''
 
 import argparse
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     filename = args.filename
     threads = args.threads
     currentcount = 0
-    outputfile = open('bluearc_collect.csv', 'w')
+    outputfile = open('bluearc_collect.txt', 'w')
     # Build our queue
     if filename:
         queue = Queue()
